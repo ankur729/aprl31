@@ -1,0 +1,67 @@
+<ul class="order-listing">
+	<li class="list" ng-repeat="order in view_cook_order">
+		<div class="order-base">
+			<div class="mini-size">
+				<span class="label"> Order placed </span>
+				<span class="value"> {{order.date}} </span>
+			</div>
+			<div class="mini-size">
+				<span class="label">  Total </span>
+				<span class="value"> Rs. {{order.order_data.grand_total}}.00 </span>
+			</div>
+			<div class="mini-size">
+				<span class="label">  Ship To </span>
+				<a href="#0" class="trigger">{{order.order_data.username}} <!-- <i class="fa fa-caret-down"></i> --></a>
+			</div>
+			<a href="#0" class="order-number">{{order.order_id}}</a>
+		</div>
+
+		<div class="ordered-product-details">
+			<span class="pro-thumb"><img src="images/product/1.jpg" class="properproduct"></span>
+			<div class="product-details">
+				<a href="#0" class="link">{{order.order_data.food_name}}</a>
+				<div class="cuisines">
+					<span class="subtext">Cuisines :</span>
+					<ul class="cuisine-list">
+					<li class="list ng-binding">punjabi</li>
+					</ul>
+				</div>
+			</div>
+			<span class="food-type"><img src="images/icon/veg.jpg"></span>
+		</div>
+
+		<ul class="order-status">
+			<li class="list">
+				<div class="table-row single">
+					<p class="data">Your order has been placed</p>
+				</div>
+			</li>
+			<li class="list">
+				<div class="table-row double"><p class="data">Delivery day : <span class="get">{{order.order_data.order_date}}</span></p></div>
+				<div class="table-row double"><p class="data">Delivery Fee :  <span class="get">Rs. 20</span></p></div>
+			</li>
+			<li class="list">
+				<div class="table-row double"><p class="data">Delivery time : <span class="get"> {{order.time   | date:'HH:mm:ss' }}</span></p></div>
+				<div class="table-row double"><p class="data">Payment Mode :  <span class="get">Online</span></p></div>
+			</li>
+			<li class="list">
+				<div class="table-row double"><p class="data">Rs. {{order.order_data.food_price}} &nbsp; | &nbsp; <span class="get">{{order.order_data.food_qty}} qty </span></p></div>
+			
+			</li>
+		</ul>
+
+		<div class="total-details">
+
+			<div class="address">
+				<b class="title">Delivery Address:</b>
+				k-368 jahangir puri delhi 110033, near hanuman mandir,
+				New Delhi - 110033, Delhi
+			</div>
+
+			<div class="order-total">
+				<span class="label">Order Total:</span>
+				<span class="amount">Rs.{{order.order_data.grand_total}}</span>
+			</div>
+		</div>
+	</li>
+</ul>
